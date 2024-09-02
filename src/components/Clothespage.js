@@ -13,6 +13,7 @@ const Clothespage = () => {
     }
 
     if (myProduct.length > 0) {
+      console.log(myProduct);
       let interchangeArr = [];
       myProduct.forEach((item) => {
         interchangeArr.push({
@@ -29,7 +30,9 @@ const Clothespage = () => {
         });
       });
 
+      
       setProduct(interchangeArr);
+  
     }
   }, []);
 

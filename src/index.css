@@ -523,6 +523,7 @@ header h1 {
 
 .btn-view-more:hover {
   background-color: #333;
+  color: #fff;
   transform: scale(1.05);
 }
 

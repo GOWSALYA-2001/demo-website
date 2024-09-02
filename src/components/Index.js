@@ -60,9 +60,10 @@ const Index = () => {
   };
 
   const callBackHome = (action, data, index) => {
+    console.log(data);
     let interchangeArr = [...productListData];
     let sizeString = "";
-    
+
     if (data && data.size && data.size.length > 0) {
       data.size.forEach((sizes) => {
         sizeString =

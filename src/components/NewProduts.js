@@ -92,14 +92,23 @@ const NewProduts = (props) => {
     let autoArr = [...productSize];
 
     if (type === "file") {
-      let file = e.target.file[0];
-      // let fileInput 
+      let file = e.target.files ? e.target.files[0] : null;
       let reader = new FileReader();
-      reader.onload();
-      // reader.readAsDataURL(file);
-
-      console.log(reader);
-
+      if(file){
+        reader.onload = ()=> {
+          value = reader.result;
+          setProductImage(value);
+        };
+         reader.readAsDataURL(file);
+        console.log(value);
+        // setProductImage(value);
+        // setProductImage(reader.readAsDataURL(file));
+      }else{
+        console.log("No file selected")
+      }
+      // console.log('Files:', e.target.files);
+      // setProductImage(reader);
+      
       // value = reader;
     } else if (type === "number") {
       value = "";
@@ -108,11 +117,16 @@ const NewProduts = (props) => {
       }
     } else if (type === "auto") {
       autoArr = e;
+      if (autoArr.length > 0) {
+        // Safe to access autoArr[0]
+      } else {
+        // console.log("autoArr is empty");
+      }
     } else {
       value = e.target.value;
     }
 
-    console.log(value);
+    // console.log(value);
 
     if (name === "productName") {
       setProductName(value);
@@ -124,9 +138,12 @@ const NewProduts = (props) => {
       setProductSPrice(value);
     } else if (name === "productSize") {
       setProductSize(autoArr);
-    } else if (name === "productImage") {
-      setProductImage(value);
-    } else if (name === "productDiscription") {
+      // console.log('Product Size:', productSize);
+    } 
+    // else if (name === "productImage") {
+    //   setProductImage(value);
+    // } 
+    else if (name === "productDiscription") {
       setProductDiscription(value);
     }
 
