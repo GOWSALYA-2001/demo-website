@@ -11,7 +11,7 @@ import MUIDataTable from "mui-datatables";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import CancelIcon from "@mui/icons-material/Cancel";
 
-const AddProduct = React.lazy(() => import("./NewProduts.js"));
+const AddProduct = React.lazy(() => import(`./NewProduts.js`));
 
 const Index = () => {
   const [productListData, setProductListData] = useState([]);

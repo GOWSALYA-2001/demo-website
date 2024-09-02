@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { Avatar } from "@mui/material";
 
-const MyProducts = React.lazy(() => import("./Index.js"));
+const MyProducts = React.lazy(() => import(`./Index.js`));
 
 const Adminpage = () => {
   return (

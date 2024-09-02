@@ -5,7 +5,7 @@ const Homepgae = () => {
   const navigate = useNavigate();
 
   const handlePageLoad = () => {
-    navigate("/clothespage");
+    navigate(`/clothespage`);
   };
 
   return (
